@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Archi 🎂</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- Stars & Confetti Canvases -->
+<canvas id="stars-canvas"></canvas>
+<canvas id="confetti-canvas"></canvas>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lightbox-card">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Photo"/>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <div class="lightbox-actions">
+      <button class="btn-sm" id="lightbox-close">Close ✕</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 1: INTRO ==================== -->
+<div id="intro" class="page active">
+  <div class="page-glow"></div>
+  <div class="page-glow-bottom"></div>
+
+  <!-- Gift Phase -->
+  <div id="gift-phase">
+    <div id="gift-container">
+      <svg width="140" height="130" viewBox="0 0 140 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Box -->
+        <rect x="15" y="55" width="110" height="70" rx="4" fill="#F08FAE"/>
+        <!-- Lid -->
+        <rect x="10" y="38" width="120" height="22" rx="4" fill="#F3C25B"/>
+        <!-- Ribbon vertical on box -->
+        <rect x="62" y="55" width="16" height="70" fill="white" opacity="0.45"/>
+        <!-- Ribbon horizontal on box -->
+        <rect x="15" y="85" width="110" height="12" fill="white" opacity="0.45"/>
+        <!-- Ribbon vertical on lid -->
+        <rect x="62" y="38" width="16" height="22" fill="white" opacity="0.45"/>
+        <!-- Bow left loop -->
+        <ellipse cx="52" cy="30" rx="22" ry="12" fill="#F3C25B" transform="rotate(-20 52 30)"/>
+        <!-- Bow right loop -->
+        <ellipse cx="88" cy="30" rx="22" ry="12" fill="#F3C25B" transform="rotate(20 88 30)"/>
+        <!-- Bow knot -->
+        <circle cx="70" cy="33" r="10" fill="#E8A83A"/>
+        <!-- Bow center highlight -->
+        <circle cx="70" cy="31" r="4" fill="#F3C25B"/>
+      </svg>
+      <span class="gift-hint">Tap to open, there is a surprise for you</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div id="hero-section">
+    <p class="hero-eyebrow">Surprise! This page is only for you.</p>
+    <div class="hb-text" id="hb-text" aria-label="Happy Birthday"></div>
+    <div class="hero-name">Archi</div>
+    <p class="hero-subtitle">Today is all about you, my best friend. 🎂</p>
+    <button class="btn-gold" id="lets-begin-btn">Let's begin →</button>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">2019</div>
+        <div class="stat-label">we met</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">7 years</div>
+        <div class="stat-label">together</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">17 Nov</div>
+        <div class="stat-label">your day</div>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button class="btn-nav invisible">Back</button>
+      <button class="btn-nav" id="intro-next">Next: Archi →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2: ARCHI'S GALLERY (10 FRAMES & ANIMATIONS) ==================== -->
+<div id="golpo" class="page">
+  <div class="page-glow"></div>
+  <div class="page-glow-bottom"></div>
+  <p class="page-eyebrow">Page 2 · Archi's World</p>
+  <h1 class="page-heading">The Birthday Girl ✨</h1>
+  <p class="page-lead">Scroll kore dekho Archi-r 10 ti alada roop — protita frame e tor alada chhobir magic!</p>
+
+  <div class="archi-gallery">
+    <!-- Frame 1: Arch Shape (Zoom Animation) -->
+    <div class="archi-item shape-arch anim-zoom">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 01.jpeg" alt="Archi 01" loading="lazy" data-caption="Archi · The classic smile that lights up everything!"/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#01 · Elegant Arch</span>
+        <h3 class="archi-title">Shei Shundor Hashi</h3>
+        <p class="archi-desc">Tor ei hashi tai sobcheye priyo. Kothao kono fake kichu nei, pure and glowing.</p>
+      </div>
+    </div>
+
+    <!-- Frame 2: Circle Shape (Slide From Left) -->
+    <div class="archi-item shape-circle anim-slide-left">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 02.jpeg" alt="Archi 02" loading="lazy" data-caption="Archi · Shob somoy shining like a star!"/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#02 · Golden Circle</span>
+        <h3 class="archi-title">Amar Sunshine</h3>
+        <p class="archi-desc">Jotoi meghe dhaka thakuk amar din, tor ekta kotha sob alo kore dey.</p>
+      </div>
+    </div>
+
+    <!-- Frame 3: Organic Blob 1 (Slide From Right) -->
+    <div class="archi-item shape-blob-1 anim-slide-right">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 03.jpeg" alt="Archi 03" loading="lazy" data-caption="Archi · Pure vibe & effortless charm."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#03 · Lavender Blob</span>
+        <h3 class="archi-title">Pure Vibe</h3>
+        <p class="archi-desc">Kono filter lage na, tor shantata ar tor bhalo manushita chokhe porar moto.</p>
+      </div>
+    </div>
+
+    <!-- Frame 4: Tilted Polaroid Left (3D Flip Animation) -->
+    <div class="archi-item shape-tilt-left anim-flip">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 04.jpeg" alt="Archi 04" loading="lazy" data-caption="Archi · Vintage Polaroid look, timeless memories."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#04 · Polaroid Tilt</span>
+        <h3 class="archi-title">Timeless Sucho</h3>
+        <p class="archi-desc">Ei chhobi ta jeno ekta postcard. Eto innocent ar eto shundor mone hoy!</p>
+      </div>
+    </div>
+
+    <!-- Frame 5: Hexagonal Blob (Spin In Animation) -->
+    <div class="archi-item shape-hex anim-spin">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 05.jpeg" alt="Archi 05" loading="lazy" data-caption="Archi · Calm, sweet & full of grace."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#05 · Mint Hexagon</span>
+        <h3 class="archi-title">Calm & Grace</h3>
+        <p class="archi-desc">Sob jhogra, sob chinta ek muhurte shanto hoye jae tor sathe thakle.</p>
+      </div>
+    </div>
+
+    <!-- Frame 6: Tilted Right (Reveal Blur To Sharp) -->
+    <div class="archi-item shape-tilt-right anim-reveal">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 06.jpg" alt="Archi 06" loading="lazy" data-caption="Archi · Tor paglami ta amar sobcheye beshi bhalo lage!"/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#06 · Peach Tilt</span>
+        <h3 class="archi-title">Tor Paglami</h3>
+        <p class="archi-desc">Tui jokhon nijer moto hasish, tokhon shotti mone hoy duniar shob thik ache.</p>
+      </div>
+    </div>
+
+    <!-- Frame 7: Organic Blob 2 (Soft Zoom In) -->
+    <div class="archi-item shape-blob-2 anim-zoom-soft">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 07.jpg" alt="Archi 07" loading="lazy" data-caption="Archi · My person, my constant."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#07 · Gold Splash</span>
+        <h3 class="archi-title">My Constant</h3>
+        <p class="archi-desc">Boletam na? Manush bodle jae, kintu tui kokhono bodlas ni amar jonno.</p>
+      </div>
+    </div>
+
+    <!-- Frame 8: Pill / Oval (Slide Up Animation) -->
+    <div class="archi-item shape-pill anim-slide-up">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 08.jpg" alt="Archi 08" loading="lazy" data-caption="Archi · The prettiest soul I know."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#08 · Rose Pill</span>
+        <h3 class="archi-title">Prettiest Soul</h3>
+        <p class="archi-desc">Tui joto shundor baire theke, tar cheye hazar gun shundor tor mon ta.</p>
+      </div>
+    </div>
+
+    <!-- Frame 9: Squircle Soft Glow (Pop Bounce) -->
+    <div class="archi-item shape-squircle anim-pop">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 09.jpg" alt="Archi 09" loading="lazy" data-caption="Archi · Chhotokhato anondo gulo tor sathei sobcheye boro."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#09 · Squircle Glow</span>
+        <h3 class="archi-title">Sweetest Moments</h3>
+        <p class="archi-desc">Protiti muhurto, chhotokhato hashi — tor sathe shob kichu mone rakhar moto.</p>
+      </div>
+    </div>
+
+    <!-- Frame 10: Star Flower Blob (Spin Slow & Glow) -->
+    <div class="archi-item shape-star anim-spin-slow">
+      <div class="archi-frame-wrap">
+        <img class="archi-photo" src="sucho 10.jpg" alt="Archi 10" loading="lazy" data-caption="Archi · Happy Birthday to my favorite girl! Always stay this wonderful."/>
+      </div>
+      <div class="archi-meta">
+        <span class="archi-tag">#10 · Star of the Show</span>
+        <h3 class="archi-title">The One & Only</h3>
+        <p class="archi-desc">Shobcheye special frame ta tor jonno. Love you so much Sucho!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn-nav" id="golpo-back">← Back</button>
+    <button class="btn-nav" id="golpo-next">Next: Amader Memory →</button>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3: DUIJONER MEMORY COLLAGE ==================== -->
+<div id="chhobi" class="page">
+  <div class="page-glow"></div>
+  <div class="page-glow-bottom"></div>
+  <p class="page-eyebrow">Page 3 · Amader Golpo</p>
+  <h1 class="page-heading">2019 theke ekhon... 📸</h1>
+  <p class="memory-collage-lead">Kono bhalo-mondo lekha chara, shudhu amader sei shundor chobi gulo. Click korlei boro hoye asbe!</p>
+
+  <div class="memory-collage-grid" id="memory-grid">
+    <!-- Card 1: 2019-2021 Early WhatsApp/Chats -->
+    <div class="memory-card" data-full="IMG-20210611-WA0001.jpg" data-caption="2019-2021 · Jekhan theke shuru: amader prothom kotha ar shurur din gulo! 💕">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">2019-2021</span>
+        <img class="memory-img" src="IMG-20210611-WA0001.jpg" alt="Amader memory 1" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2019 - 2021 · The Beginning</span>
+        <p class="memory-caption">"Sei shurur kotha gulo... jokhon tui amar jibone ashol bondhu hoye uthli."</p>
+      </div>
+    </div>
+
+    <!-- Card 2: 2022 Late night chat memories -->
+    <div class="memory-card" data-full="Screenshot_2022-02-13-07-05-08-535_com.whatsapp.jpg" data-caption="2022 · Shara raat jege kotha bolar sei pagal somoy gulo.">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Feb 2022</span>
+        <img class="memory-img" src="Screenshot_2022-02-13-07-05-08-535_com.whatsapp.jpg" alt="Amader memory 2" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2022 · Late Night Talks</span>
+        <p class="memory-caption">"Ghum na peye ghontar por ghonta faltu kothay heshe more jawar din."</p>
+      </div>
+    </div>
+
+    <!-- Card 3: 2022 Deep bonding -->
+    <div class="memory-card" data-full="Screenshot_2022-02-13-07-06-36-561_com.whatsapp.jpg" data-caption="2022 · Shob kotha share korar ektai jayga: tui.">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Feb 2022</span>
+        <img class="memory-img" src="Screenshot_2022-02-13-07-06-36-561_com.whatsapp.jpg" alt="Amader memory 3" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2022 · Safe Space</span>
+        <p class="memory-caption">"Duniar kauke ja bola jay na, sheta tor kache ekdom shohoj chilo."</p>
+      </div>
+    </div>
+
+    <!-- Card 4: 2022 Pure laughter -->
+    <div class="memory-card" data-full="Screenshot_2022-02-13-07-07-44-406_com.whatsapp.jpg" data-caption="2022 · Mone ache ki niye hash-tam amra? Kono karon lagto na!">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Feb 2022</span>
+        <img class="memory-img" src="Screenshot_2022-02-13-07-07-44-406_com.whatsapp.jpg" alt="Amader memory 4" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2022 · Random Laughter</span>
+        <p class="memory-caption">"Kono karon charai heshe heshe pet betha korar sei din gulo."</p>
+      </div>
+    </div>
+
+    <!-- Card 5: 2024 Special Moment -->
+    <div class="memory-card" data-full="IMG20240910112904.jpg" data-caption="Sep 2024 · Amader shathe thakar protita muhurto cherish korar moto.">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Sep 2024</span>
+        <img class="memory-img" src="IMG20240910112904.jpg" alt="Amader memory 5" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2024 · Growing Together</span>
+        <p class="memory-caption">"Bochor gelo, kintu amader bondhutto aro ghono ar shokto holo."</p>
+      </div>
+    </div>
+
+    <!-- Card 6: Nov 2024 Special Click -->
+    <div class="memory-card" data-full="Han2320241112_184001_Iphone 15 Promax📸 By Light Editz.jpg" data-caption="Nov 2024 · Tor birthday-r thik aage, shundor ekta shriti.">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Nov 2024</span>
+        <img class="memory-img" src="Han2320241112_184001_Iphone 15 Promax📸 By Light Editz.jpg" alt="Amader memory 6" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2024 · Golden Days</span>
+        <p class="memory-caption">"Tor birthday ashle amar mone hoy amader nijeder ekta utsab shuru holo."</p>
+      </div>
+    </div>
+
+    <!-- Card 7: 2025 Memorable Day -->
+    <div class="memory-card" data-full="IMG20250426004925.jpg" data-caption="Apr 2025 · Midnight vibes, amra dujon.">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Apr 2025</span>
+        <img class="memory-img" src="IMG20250426004925.jpg" alt="Amader memory 7" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2025 · Midnight Magic</span>
+        <p class="memory-caption">"Raat-er nistobdhotay tor sathe kotha bola mane shanti."</p>
+      </div>
+    </div>
+
+    <!-- Card 8: July 2025 Hangout -->
+    <div class="memory-card" data-full="IMG-20250719-WA0017.jpg" data-caption="Jul 2025 · Jokhon dekha hoyeche ba kotha hoyeche, din ta bhalo hoye geche.">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Jul 2025</span>
+        <img class="memory-img" src="IMG-20250719-WA0017.jpg" alt="Amader memory 8" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2025 · Pure Comfort</span>
+        <p class="memory-caption">"Tor pashe boshe thakleo mone hoy jibone shob thik ache."</p>
+      </div>
+    </div>
+
+    <!-- Card 9: 2025-2026 Core Memory 1 -->
+    <div class="memory-card" data-full="Image01.jpg" data-caption="Amader shobcheye priyo shriti gulo... forever captured!">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Core Memory</span>
+        <img class="memory-img" src="Image01.jpg" alt="Amader memory 9" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">Forever · My Only Person</span>
+        <p class="memory-caption">"Tui shudhu ekta bondhu na re Archi, tui amar poribar."</p>
+      </div>
+    </div>
+
+    <!-- Card 10: 2025-2026 Core Memory 2 -->
+    <div class="memory-card" data-full="Image02.jpeg" data-caption="2019 theke ajker din porjonto... ar shara jibon er jonno!">
+      <div class="memory-img-wrap">
+        <span class="memory-badge">Always & Forever</span>
+        <img class="memory-img" src="Image02.jpeg" alt="Amader memory 10" loading="lazy"/>
+      </div>
+      <div class="memory-caption-box">
+        <span class="memory-year">2026 & Beyond</span>
+        <p class="memory-caption">"Kothao fireo pabo na tor moto bondhu. Shara jibon thakbi toh?"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn-nav" id="chhobi-back">← Back</button>
+    <button class="btn-nav" id="chhobi-next">Next: A Letter for You →</button>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4: LETTER & SURPRISE ==================== -->
+<div id="surprise" class="page">
+  <div class="page-glow"></div>
+  <div class="page-glow-bottom"></div>
+  <p class="page-eyebrow">Page 4 · Moner Kotha</p>
+  <h1 class="page-heading">A letter for you, Archi</h1>
+
+  <div class="letter-card" id="letter-card" role="article" aria-label="Birthday letter"></div>
+  <div class="letter-hint" id="letter-hint">Typing... click to show everything</div>
+
+  <div class="pills-row" id="pills-row"></div>
+
+  <button class="btn-gold" id="surprise-btn" style="display:none">🎁 There is one more surprise</button>
+
+  <!-- Surprise Stage -->
+  <div id="surprise-stage">
+    <!-- Balloons -->
+    <div class="balloons-row" id="balloons-row">
+      <button class="balloon-wrap" aria-label="Balloon 1">
+        <svg class="balloon-svg" width="60" height="90" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="26" ry="32" fill="#F08FAE"/>
+          <path d="M30 67 Q28 72 30 78 Q32 84 30 90" stroke="#888" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="22" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-30 22 22)"/>
+        </svg>
+      </button>
+      <button class="balloon-wrap" aria-label="Balloon 2">
+        <svg class="balloon-svg" width="60" height="90" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="26" ry="32" fill="#A9B6F0"/>
+          <path d="M30 67 Q28 72 30 78 Q32 84 30 90" stroke="#888" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="22" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-30 22 22)"/>
+        </svg>
+      </button>
+      <button class="balloon-wrap" aria-label="Balloon 3">
+        <svg class="balloon-svg" width="60" height="90" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="26" ry="32" fill="#F3C25B"/>
+          <path d="M30 67 Q28 72 30 78 Q32 84 30 90" stroke="#888" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="22" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-30 22 22)"/>
+        </svg>
+      </button>
+      <button class="balloon-wrap" aria-label="Balloon 4">
+        <svg class="balloon-svg" width="60" height="90" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="26" ry="32" fill="#A8E6CF"/>
+          <path d="M30 67 Q28 72 30 78 Q32 84 30 90" stroke="#888" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="22" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-30 22 22)"/>
+        </svg>
+      </button>
+      <button class="balloon-wrap" aria-label="Balloon 5">
+        <svg class="balloon-svg" width="60" height="90" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="26" ry="32" fill="#FFB7B2"/>
+          <path d="M30 67 Q28 72 30 78 Q32 84 30 90" stroke="#888" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="22" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-30 22 22)"/>
+        </svg>
+      </button>
+    </div>
+    <div id="balloon-messages" aria-live="polite"></div>
+
+    <!-- Cake -->
+    <div class="cake-wrap">
+      <svg id="cake-svg" width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Birthday cake">
+        <!-- Bottom layer -->
+        <rect x="20" y="140" width="160" height="70" rx="8" fill="#F8A5C2"/>
+        <circle cx="50" cy="175" r="5" fill="#F3C25B" opacity="0.7"/>
+        <circle cx="80" cy="162" r="4" fill="#A9B6F0" opacity="0.7"/>
+        <circle cx="110" cy="178" r="5" fill="#F3C25B" opacity="0.7"/>
+        <circle cx="140" cy="160" r="4" fill="#A9B6F0" opacity="0.7"/>
+        <circle cx="165" cy="175" r="4" fill="#F3C25B" opacity="0.7"/>
+        <path d="M20 148 Q35 136 50 148 Q65 160 80 148 Q95 136 110 148 Q125 160 140 148 Q155 136 170 148 Q180 156 180 148" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Top layer -->
+        <rect x="40" y="88" width="120" height="58" rx="8" fill="#FBBDD1"/>
+        <circle cx="70" cy="112" r="4" fill="#F3C25B" opacity="0.7"/>
+        <circle cx="100" cy="102" r="3" fill="#A9B6F0" opacity="0.7"/>
+        <circle cx="130" cy="114" r="4" fill="#F3C25B" opacity="0.7"/>
+        <path d="M40 96 Q55 82 70 96 Q85 110 100 96 Q115 82 130 96 Q145 110 160 96" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Candle -->
+        <rect x="93" y="58" width="14" height="34" rx="4" fill="#A9B6F0"/>
+        <rect x="97" y="62" width="4" height="22" rx="2" fill="#C8D3F8" opacity="0.5"/>
+        <!-- Flame -->
+        <g id="flame-group" class="cake-flame">
+          <path d="M100 58 C96 52 93 45 100 38 C107 45 104 52 100 58Z" fill="#FFD93D"/>
+          <path d="M100 56 C97 51 95 46 100 41 C105 46 103 51 100 56Z" fill="#FF9500"/>
+          <circle cx="100" cy="52" r="3" fill="#FFF3CD" opacity="0.8"/>
+        </g>
+        <!-- Plate -->
+        <ellipse cx="100" cy="212" rx="85" ry="8" fill="#E8D5E0" opacity="0.5"/>
+      </svg>
+      <div class="wish-text" id="wish-text">Make a wish! ✨</div>
+      <button class="btn-gold" id="blow-btn" aria-label="Blow out the candle">🕯️ Blow</button>
+    </div>
+
+    <!-- Final Message -->
+    <div id="final-message" role="region" aria-label="Final birthday message">
+      <div class="final-main">Thank you for being my person. Love you always, Sucho! 💛</div>
+      <div class="final-sub">Happy Birthday, Archi 🎂</div>
+    </div>
+  </div>
+
+  <div class="page-nav">
+    <button class="btn-nav" id="surprise-back">← Back</button>
+    <button class="btn-nav invisible">Next</button>
+  </div>
+</div>
+
+<!-- Bottom Navigation -->
+<nav id="bottom-nav" role="tablist" aria-label="Page navigation">
+  <button class="nav-pill active" role="tab" aria-selected="true" data-target="intro">1 Intro</button>
+  <button class="nav-pill" role="tab" aria-selected="false" data-target="golpo">2 Archi</button>
+  <button class="nav-pill" role="tab" aria-selected="false" data-target="chhobi">3 Memories</button>
+  <button class="nav-pill" role="tab" aria-selected="false" data-target="surprise">4 Letter</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
